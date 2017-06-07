@@ -70,12 +70,4 @@ extension RoutePageViewController: UIPageViewControllerDataSource, UIPageViewCon
         let controller = pendingViewControllers.first! as! RouteManeuverViewController
         maneuverDelegate.routePageViewController(self, willTransitionTo: controller)
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if completed {
-            if let controller = previousViewControllers.first as? RouteManeuverViewController {
-                currentManeuverPage = controller
-            }
-        }
-    }
 }
