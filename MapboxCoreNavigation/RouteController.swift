@@ -76,7 +76,11 @@ open class RouteController: NSObject {
     /**
      The location manager.
      */
-    public var locationManager = CLLocationManager()
+    public var locationManager = NavigationLocationManager() {
+        didSet {
+            locationManager.delegate = self
+        }
+    }
     
     
     /**
@@ -113,9 +117,6 @@ open class RouteController: NSObject {
         super.init()
         
         locationManager.delegate = self
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        }
     }
     
     deinit {

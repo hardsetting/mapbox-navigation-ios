@@ -83,8 +83,6 @@ class RouteMapViewController: UIViewController, PulleyPrimaryContentControllerDe
         } else {
             setDefaultCamera(animated: false)
         }
-
-        UIDevice.current.addObserver(self, forKeyPath: "batteryState", options: .initial, context: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -103,20 +101,7 @@ class RouteMapViewController: UIViewController, PulleyPrimaryContentControllerDe
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         webImageManager.cancelAll()
-    }
-
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "batteryState" {
-            let batteryState = UIDevice.current.batteryState
-            let pluggedIn = batteryState == .charging || batteryState == .full
-            routeController.locationManager.desiredAccuracy = pluggedIn ? kCLLocationAccuracyBestForNavigation : kCLLocationAccuracyBest
-        }
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
 
     @IBAction func recenter(_ sender: AnyObject) {

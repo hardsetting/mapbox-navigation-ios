@@ -357,15 +357,13 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
     }
     
     func setupRouteController() {
-        if routeController == nil {
+        if let routeController = routeController {
+            routeController.routeProgress = RouteProgress(route: route)
+        } else {
             routeController = RouteController(along: route, directions: directions)
+            routeController.locationManager = DefaultLocationManager()
             routeController.delegate = self
             routeController.simulatesLocationUpdates = simulatesLocationUpdates
-            
-            if Bundle.main.backgroundModeLocationSupported {
-                routeController.locationManager.activityType = .automotiveNavigation
-                routeController.locationManager.allowsBackgroundLocationUpdates = true
-            }
         }
         
         if destination == nil {
