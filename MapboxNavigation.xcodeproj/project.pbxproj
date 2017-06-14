@@ -81,6 +81,7 @@
 		354A01EC1E6626EF00D765C2 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A1D3651E6624EF00A48FE8 /* Mapbox.framework */; };
 		354A01ED1E6626EF00D765C2 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35A1D3651E6624EF00A48FE8 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		354BD4F51E6637D500AE1344 /* AWSPolly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354BD4F11E6634C500AE1344 /* AWSPolly.framework */; };
+		35848FED1EF0D5BA00E0E252 /* SF-DC.data in Resources */ = {isa = PBXBuildFile; fileRef = 35848FEC1EF0D5BA00E0E252 /* SF-DC.data */; };
 		358D14661E5E3B7700ADE590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D14651E5E3B7700ADE590 /* AppDelegate.swift */; };
 		358D14681E5E3B7700ADE590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D14671E5E3B7700ADE590 /* ViewController.swift */; };
 		359D00CF1E732D7100C2E770 /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354A01BC1E66259600D765C2 /* Polyline.framework */; };
@@ -621,6 +622,7 @@
 		C52D09CF1DEF5E5F00BE3C5C /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				35848FEC1EF0D5BA00E0E252 /* SF-DC.data */,
 				C52D09CD1DEF5E5100BE3C5C /* route.json */,
 				DAB2CCE61DF7AFDE001B2FE1 /* dc-line.geojson */,
 			);
@@ -1013,6 +1015,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB2CCE71DF7AFDF001B2FE1 /* dc-line.geojson in Resources */,
+				35848FED1EF0D5BA00E0E252 /* SF-DC.data in Resources */,
 				C52D09CE1DEF5E5100BE3C5C /* route.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
